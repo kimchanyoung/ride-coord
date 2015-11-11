@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :vehicle do
-    name "#{Faker::Lorem.word.capitalize} Mobile"
+    name {"#{Faker::Lorem.word.capitalize} Mobile"}
     association :event
   end
 
