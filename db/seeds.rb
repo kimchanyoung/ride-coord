@@ -6,7 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-5.times { FactoryGirl.create(:event) }
+FactoryGirl.create(:event)
+FactoryGirl.create(:event)
+FactoryGirl.create(:event)
+FactoryGirl.create(:event)
+FactoryGirl.create(:event)
 
 Event.all.each do |event|
   Vehicle.create!({name: Faker::Lorem.word.capitalize, event_id: event.id})
