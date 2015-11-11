@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pusher'
 gem 'foundation-rails'
 gem 'smarter_csv'
+gem 'pry'
 
 gem 'simplecov', :require => false, :group => :test
 
