@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151111172024) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "riders", force: :cascade do |t|
     t.string   "fname",      null: false
     t.string   "lname",      null: false
     t.integer  "event_id",   null: false
