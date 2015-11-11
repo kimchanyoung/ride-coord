@@ -1,6 +1,6 @@
-class CreateUsers < ActiveRecord::Migration
+class CreateRiders < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :riders do |t|
       t.string :fname, null: false
       t.string :lname, null: false
       t.integer :event_id, null: false

@@ -1,14 +1,14 @@
 <h1><%= @event.name %></h1>
 <%= link_to "Add a vehicle", new_event_vehicle_path(@event) %>
-<%= link_to "Add a user", new_event_user_path(@event) %>
+<%= link_to "Add a rider", new_event_rider_path(@event) %>
 <%= 'Rideless Folks' %>
-<ul><% @event.rideless_users.each do |user| %>
-  <li><%= user.fname %></li>
+<ul><% @event.rideless_riders.each do |rider| %>
+  <li><%= rider.fname %></li>
 <% end %></ul>
 
 <% @event.vehicles.each do |vehicle| %>
 <%= vehicle.name %>
-  <ul><% vehicle.users.each do |user|%>
-    <li><%= user.fname %></li>
+  <ul><% vehicle.riders.each do |rider|%>
+    <li><%= rider.fname %></li>
   <% end %></ul>
 <% end %>

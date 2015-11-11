@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   resources :events, only: [:index, :show, :new, :create] do
     resources :vehicles, only: [:index, :new, :create] do
-      resources :users, only: [:index]
+      resources :riders, only: [:index]
     end
-    resources :users, only: [:index, :show, :new, :create]
+    resources :riders, only: [:index, :show, :new, :create]
   end
 
   resources :vehicles, only: [:show]
