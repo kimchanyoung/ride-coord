@@ -23,9 +23,12 @@ ActiveRecord::Schema.define(version: 20151111172024) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "fname",      null: false
+    t.string   "lname",      null: false
     t.integer  "event_id",   null: false
     t.integer  "vehicle_id"
+    t.string   "email",      null: false
+    t.string   "phone",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
