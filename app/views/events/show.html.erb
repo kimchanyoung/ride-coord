@@ -3,7 +3,7 @@
 <%= link_to "Add a user", new_event_user_path(@event) %>
 <%= 'Rideless Folks' %>
 <% @event.rideless_users.each do |user| %>
-  <% user.fname %>
+  <%= user.fname %>
 <% end %>
 <% @event.vehicles.each do |vehicle| %>
   <%= vehicle.name %>
