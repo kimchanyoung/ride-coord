@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :vehicle do
-    name "MyString"
-event_id 1
+    name "#{Faker::Lorem.word.capitalize} Mobile"
+    association :event
   end
 
 end

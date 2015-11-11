@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :event do
-    name "MyString"
+    name "#{Faker::Company.name} Retreat"
   end
 
 end
