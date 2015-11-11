@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times { FactoryGirl.create(:event) }
+
+Event.all.each do |event|
+  Vehicle.create!({name: Faker::Lorem.word.capitalize, event_id: event.id})
+  User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, event_id: event.id})
+end
+
+
+Vehicle.all.each do |vehicle|
+  User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, vehicle_id: vehicle.id, event_id: vehicle.event.id})
+end
+
