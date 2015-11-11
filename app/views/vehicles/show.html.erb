@@ -1,4 +1,10 @@
-<%= @vehicle.name %>
-<% @vehicle.users.each do |user| %>
-  <%= user.fname %>
-<% end %>
+<h1><%= @vehicle.event.name %> - <%= @vehicle.name %></h1>
+<h2>Current Passengers</h2>
+<ul><% @vehicle.users.each do |user| %>
+  <li><%= user.fname %></li>
+<% end %></ul>
+
+<h2><%= 'Riderless Users' %></h2>
+<ul><% @vehicle.event.rideless_users.each do |user| %>
+  <li><%= user.fname %></li>
+<% end %></ul>
