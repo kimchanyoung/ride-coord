@@ -1,15 +1,26 @@
 <h1><%= @event.name %></h1>
-<%= link_to 'Download', csv_download_event_path(book) %>
-<%= link_to "Add a vehicle", new_event_vehicle_path(@event) %>
-<%= link_to "Add a rider", new_event_rider_path(@event) %>
+
+<ul>
+  <% @event.vehicles.each do |vehicle| %>
+    <div class='row'>
+      <div class='small-12 small-centered text-center columns'>
+        <li><%= link_to vehicle.name, vehicle_path(vehicle) %></li>
+      </div>
+    </div>
+  <% end %>
+</ul>
+
+<div class='row'>
+  <div class='small-12 small-centered text-center columns'>
+    <%= link_to "Add a vehicle", new_event_vehicle_path(@event) %>
+  </div>
+</div>
+
+
+
 <%= 'Rideless Folks' %>
 <ul><% @event.rideless_riders.each do |rider| %>
   <li><%= rider.fname %></li>
 <% end %></ul>
 
-<% @event.vehicles.each do |vehicle| %>
-<%= vehicle.name %>
-  <ul><% vehicle.riders.each do |rider|%>
-    <li><%= rider.fname %></li>
-  <% end %></ul>
-<% end %>
+<%= link_to "Add a rider", new_event_rider_path(@event) %>
