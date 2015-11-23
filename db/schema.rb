@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 20151123183738) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "fname",      null: false
-    t.string   "lname",      null: false
-    t.string   "email",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "fname",           null: false
+    t.string   "lname",           null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "vehicles", force: :cascade do |t|
